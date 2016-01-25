@@ -10,10 +10,12 @@ explain situation in which you would want to prevent the default browser behavio
 
 stop form from behaving so form doesn't submit and prevent page refresh
 
+
 ## How to use
 
 pass `event` to function as parameter and `event.preventDefault();` - give a few examples of this
 
+give code with prevent default to comment in and out and see behavior change
 ## Instructions
 
 pre-written code with functions where students need to use preventDefault to stop browser behavior. tests to accompany.
