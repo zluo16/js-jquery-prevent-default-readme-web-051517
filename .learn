@@ -1,6 +1,7 @@
 tags:
-  - a tag
+  - jquery
+  - prevent default
 languages:
-  - a language
+  - jQuery
 resources: 
   - 0

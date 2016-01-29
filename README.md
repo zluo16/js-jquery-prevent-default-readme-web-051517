@@ -6,17 +6,81 @@
 
 ## Intro
 
-explain situation in which you would want to prevent the default browser behavior - maybe to stop a form from being submitted if a user did not enter valid form input (have `preventDefault` in the if-statement)
+What happens when you submit a form? Think about when you signed up for an online service. Maybe an Amazon account, or you log into your Facebook or email accounts. What happened in the browser when you submitted that form? As soon as the the form was submitted the page in the browser refreshes. This happens every single time. This is known as the default browser behavior.
 
-stop form from behaving so form doesn't submit and prevent page refresh
+While this is obviously the behavior we would want to have most of the time, there are times when you maybe don't want a page refresh. Maybe you have client-side validations that check to make sure the form input is correct and the user doesn't enter a valid input. Maybe you're building a single page application (like the calculator or a to-do list) and refreshing the page would clear the data from the page.
 
+Both of those circumstances involve stopping jQuery from performing the default behavior. We can do that by using the `preventDefault` function.
 
-## How to use
+## Default Behavior
 
-pass `event` to function as parameter and `event.preventDefault();` - give a few examples of this
+Let's say we have the following form with a div below it::
 
-give code with prevent default to comment in and out and see behavior change
-## Instructions
+```html
+<form>
+  <input type="text" id="name">
+  <input type="submit" value="submit">
+</form>
+<div id="hello">
+</div>
+```
 
-pre-written code with functions where students need to use preventDefault to stop browser behavior. tests to accompany.
+And the following `submit` event that says hello to the user based on the name they entered. The greeting is added to the `div` with the ID `hello`. 
+
+```js
+$('form').on('submit', function(event){
+  var name = $('#name').val();
+  $("#hello").text("Hello, " + name);
+});
+```
+
+When you actually enter and submit the form, instead of seeing the greeting, you'll see the page refresh. Go ahead and open `index.html` in the browser and `js/script.js` in the text editor. You'll want to uncomment the code under the comment `/ browser refreshes on submit` and make sure the rest of the code in the file is commented out. Go ahead and test the form submission. You should see the form submit and the page refresh. Obviously that isn't going to cut it for us.
+
+## jQuery Event Object
+
+So how do we use `preventDefault`? We need to refactor our code slightly:
+
+```js
+$('form').on('submit', function(event){
+  var name = $('#name').val();
+  $("#hello").text(name);
+  event.preventDefault();
+});
+```
+
+In the above code, we had to pass an `event` to the anonymous function. This `event` is the jQuery event object. Every time an event is bound to an element, this jQuery event object is created to represent that event. 
+
+In `js/script.js` go ahead and comment out all the code except for the code directly below the comment `//examine event object`. That code should have `debugger`. Refresh `index.html` in the browser and fire your click event. When you're dropped in the debugger console, go ahead and take a look at `event`.
+
+You should see something like this:
+
+```js
+event
+> n.Event {originalEvent: Event, type: "submit", timeStamp: 1453912261129, jQuery211012266199523583055: true, which: undefined…}
+```
+
+`event.currentTarget;` will return the HTML `form` becuase that is the element the submit event is bound to. `event.type;` returns `"submit"`.
+
+## Using Prevent Default
+
+Now that we know what `event` represents, let's talk about what we do with that object. We have to pass `event` as an argument to the anonymous callback function. 
+
+```js
+$('form').on('submit', function(event){
+ //code
+});
+```
+
+Now that we have `event` accessible inside the function, we can use it to call `preventDefault`:
+
+```js
+event.preventDefault();
+```
+
+What this does is stop the event from performing it's default behavior. Go into `js/script.js` and comment out all the code except the lines directly below the comment `// stop page refresh`. Now refresh `index.html` in the browser and submit the form. You should see your greeting appear!
+
+## Resources
+
++ [jQuery Event Object](https://api.jquery.com/category/events/event-object/).
+
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-jquery-prevent-default-readme' title='Prevent Default Readme'>Prevent Default Readme</a> on Learn.co and start learning to code for free.</p>
