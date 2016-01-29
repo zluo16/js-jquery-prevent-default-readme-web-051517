@@ -19,3 +19,4 @@ give code with prevent default to comment in and out and see behavior change
 ## Instructions
 
 pre-written code with functions where students need to use preventDefault to stop browser behavior. tests to accompany.
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-jquery-prevent-default-readme' title='Prevent Default Readme'>Prevent Default Readme</a> on Learn.co and start learning to code for free.</p>
