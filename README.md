@@ -14,7 +14,7 @@ Both of those circumstances involve stopping jQuery from performing the default 
 
 ## Default Behavior
 
-Let's say we have the following form with a div below it::
+Let's say we have the following form with a div below it:
 
 ```html
 <form>
@@ -84,3 +84,5 @@ What this does is stop the event from performing it's default behavior. Go into 
 + [jQuery Event Object](https://api.jquery.com/category/events/event-object/).
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-jquery-prevent-default-readme' title='Prevent Default Readme'>Prevent Default Readme</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-jquery-prevent-default-readme'>Prevent Default</a> on Learn.co and start learning to code for free.</p>
