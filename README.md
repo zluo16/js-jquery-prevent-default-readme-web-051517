@@ -59,7 +59,7 @@ event
 > n.Event {originalEvent: Event, type: "submit", timeStamp: 1453912261129, jQuery211012266199523583055: true, which: undefined…}
 ```
 
-`event.currentTarget;` will return the HTML `form` becuase that is the element the submit event is bound to. `event.type;` returns `"submit"`.
+`event.currentTarget;` will return the HTML `form` because that is the element the submit event is bound to. `event.type;` returns `"submit"`.
 
 ## Using Prevent Default
 
@@ -86,3 +86,5 @@ What this does is stop the event from performing it's default behavior. Go into 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-jquery-prevent-default-readme' title='Prevent Default Readme'>Prevent Default Readme</a> on Learn.co and start learning to code for free.</p>
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-jquery-prevent-default-readme'>Prevent Default</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/js-jquery-prevent-default-readme'>Prevent Default</a> on Learn.co and start learning to code for free.</p>
