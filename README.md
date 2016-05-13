@@ -43,7 +43,7 @@ So how do we use `preventDefault`? We need to refactor our code slightly:
 ```js
 $('form').on('submit', function(event){
   var name = $('#name').val();
-  $("#hello").text(name);
+  $("#hello").text("Hello, " + name);
   event.preventDefault();
 });
 ```
