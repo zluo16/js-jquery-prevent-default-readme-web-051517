@@ -1,4 +1,4 @@
-# Prevent Default Readme
+# Prevent Default
 
 ## Objectives
 + Explain what prevent default does and when it's used
